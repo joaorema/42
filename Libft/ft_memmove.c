@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpedro-c <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/22 11:15:29 by jpedro-c          #+#    #+#             */
+/*   Updated: 2024/10/22 11:19:48 by jpedro-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void *memmove(void *dest, const void *src, size_t n)
+{
+	char *d;
+	const char *s;
+	
+	d = (char *)dest;
+	s = (const char *)src;
+	
+	if(dest == src)
+	{
+		return(dest);
+	}
+	if (s < d)
+	{
+		while(n--)
+		{
+			*(d + n) = *(s + n);
+		}
+		return(dest);
+	}
+	while(n --)
+	{
+		*d++ = *s++;
+	}
+	return (dest);
+}	
