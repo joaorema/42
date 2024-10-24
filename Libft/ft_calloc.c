@@ -17,22 +17,38 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 	size_t	new;
 
-	if((nmemb == 0) || (size == 0))
+	if ((nmemb == 0) || (size == 0))
 	{
 		nmemb = 1;
 		size = 1;
 	}
 	new = (nmemb * size);
 	ptr = malloc(new);
-	if(!ptr)
+	if (!ptr)
 	{
-		return(NULL);
+		return (NULL);
 	}
-	ft_memset(ptr, 0, new);  // iniciar o bloco de memoria com '\0'
-	return((void *)ptr);
+	ft_memset(ptr, 0, new);
+	return ((void *)ptr);
 }
+/*
+#include <stdio.h>
+#include "libft.h"
 
-// alloca memoria para um array on nmbem considerando o size
-// nmemb numero de elementos no array
-// size tamanho de cada elemento no array
-// returna null se falhar
+int main(void)
+{
+    int *arr = (int *)ft_calloc(5, sizeof(int));
+    if (arr == NULL)
+    {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%i ", arr[i]);
+    }
+    printf("\n");
+    free(arr);
+    return 0;
+}
+*/

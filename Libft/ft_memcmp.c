@@ -12,19 +12,18 @@
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*c1;
 	const unsigned char	*c2;
-	size_t	i;
+	size_t				i;
 
 	i = 0;
 	c1 = (const unsigned char *)s1;
 	c2 = (const unsigned char *)s2;
-
-	while(i < n)
+	while (i < n)
 	{
-		if(c1[i] != c2[i])
+		if (c1[i] != c2[i])
 		{
 			return (c1[i] - c2[i]);
 		}
@@ -32,4 +31,17 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+/*
+#include <stdio.h>
 
+int main(void)
+{
+    char str1[] = "Hello";
+    char str2[] = "Hello";
+    char str3[] = "World";
+
+    printf("%i\n", ft_memcmp(str1, str2, 5)); // Should print 0
+    printf("%i\n", ft_memcmp(str1, str3, 5)); // Should print a non-zero value
+    return 0;
+}
+*/

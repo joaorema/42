@@ -19,36 +19,45 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	remain_len;
 
 	remain_len = ft_strlen(s) - start;
-	if(!s)
-	{
-		return(NULL);
-	}
-	if(len > remain_len)
-        {
-                len = remain_len;
-        }
-
-	if((size_t)start > ft_strlen(s))
-	{
-		return(ft_strdup(""));
-	}
+	if (!s)
+		return (NULL);
+	if (len > remain_len)
+		len = remain_len;
+	if ((size_t)start > ft_strlen(s))
+		return (ft_strdup(""));
 	new = malloc(sizeof(char) * (len + 1));
 	i = 0;
-	if(!new)
-	{
-		return(0);
-	}
-	while(i < len)
+	if (!new)
+		return (0);
+	while (i < len)
 	{
 		new[i] = *(s + start + i);
 		i++;
 	}
 	new[i] = '\0';
-	return(new);
+	return (new);
 }
+/*
+#include <stdio.h>
+#include "libft.h"
 
+int main(void)
+{
+    const char *s = "Hello, world!";
+    unsigned int start = 7;
+    size_t len = 5;
 
-// char const *s = pointer para o string
-// start = inicio do index
-// len = tamanho do substring
-// remain_len serve para calcular se a nova substring nao e maior que a string original
+    char *result = ft_substr(s, start, len);
+    if (result)
+    {
+        printf("Substring: '%s'\n", result); // Should print "world"
+        free(result);
+    }
+    else
+    {
+        printf("Substring extraction failed\n");
+    }
+
+    return 0;
+}
+*/

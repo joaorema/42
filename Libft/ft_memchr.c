@@ -12,20 +12,39 @@
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
-	size_t	i;
+	size_t			i;
 
 	str = (unsigned char *)s;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
-		if(str[i] == (unsigned char)c)
+		if (str[i] == (unsigned char)c)
 		{
-			return((void *)(s + i));
+			return ((void *)(s + i));
 		}
 		i++;
 	}
 	return (0);
 }
+/*
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+    char str[] = "Hello, world!";
+    char *result = ft_memchr(str, 'o', 13);
+    if (result != NULL)
+    {
+        printf("Found 'o' at position: %ld\n", result - str);
+    }
+    else
+    {
+        printf("'o' not found\n");
+    }
+    return 0;
+}
+*/

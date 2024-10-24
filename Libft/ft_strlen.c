@@ -12,15 +12,27 @@
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }
+/*
+#include <stdio.h>
+#include "libft.h"
 
+int main(void)
+{
+    const char *str = "Hello, world!";
+    size_t length = ft_strlen(str);
+    printf("Length of '%s': %zu\n", str, length);
+
+    return 0;
+}
+*/

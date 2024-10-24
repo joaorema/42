@@ -18,28 +18,45 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	last;
 	char	*str;
 
-	if(!s1)
+	if (!s1)
 	{
-		return(NULL);
+		return (NULL);
 	}
-	if(!set)
+	if (!set)
 	{
-		return(ft_strdup(s1));
+		return (ft_strdup(s1));
 	}
 	first = 0;
 	last = (ft_strlen(s1) - 1);
-	while(s1[first] && ft_strchr(set, s1[first]))   // quando encontra o caracter de set no s1
-	{
+	while (s1[first] && ft_strchr(set, s1[first]))
 		++first;
-	}
-	while(s1[first] && ft_strchr(set, s1[last]))
-	{
+	while (s1[first] && ft_strchr(set, s1[last]))
 		--last;
-	}
-	if(first > last)
-	{
-		return(ft_strdup(""));
-	}
-	str = ft_substr(s1, first, ((last - first) + 1));  // (char const *s, unsigned int start, size_t len)
-	return(str);
+	if (first > last)
+		return (ft_strdup(""));
+	str = ft_substr(s1, first, ((last - first) + 1));
+	return (str);
 }
+/*
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+    const char *s1 = "  Hello, world!  ";
+    const char *set = " ";
+
+    char *result = ft_strtrim(s1, set);
+    if (result)
+    {
+        printf("Trimmed string: '%s'\n", result); // Should print "Hello, world!"
+        free(result);
+    }
+    else
+    {
+        printf("Trimming failed\n");
+    }
+
+    return 0;
+}
+*/

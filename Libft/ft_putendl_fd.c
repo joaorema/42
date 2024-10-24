@@ -15,15 +15,34 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
+
 	i = 0;
-	if(!s)
+	if (!s)
 	{
 		return ;
 	}
-	while(s[i])
+	while (s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;
 	}
 	write(fd, "\n", 1);
 }
+/*
+#include <fcntl.h>
+#include "libft.h"
+
+int main(void)
+{
+    int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
+    if (fd == -1)
+    {
+        return 1; // Error opening file
+    }
+
+    ft_putendl_fd("Hello, world!", fd);
+
+    close(fd);
+    return 0;
+}
+*/

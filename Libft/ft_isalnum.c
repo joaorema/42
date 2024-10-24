@@ -9,16 +9,22 @@
 /*   Updated: 2024/10/22 10:06:40 by jpedro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h" 
 
-# include "libft.h" 
-
-int ft_isalnum (int c)
+int	ft_isalnum(int c)
 {
-	if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
 	{
-		return 1;
+		return (1);
 	}
-	return 0;
+	return (0);
 }
-
-
+/*
+#include <stdio.h>
+int main()
+{
+	char	new[] = "teste";
+	printf("%i\n", ft_isalnum(new);
+}
+*/
